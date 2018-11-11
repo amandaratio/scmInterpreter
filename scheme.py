@@ -338,9 +338,7 @@ def make_let_frame(bindings, env):
 def do_define_macro(expressions, env):
     """Evaluate a define-macro form."""
     # BEGIN Problem 21
-    formals = expressions.first
-    func = MacroProcedure(formals, expressions.second, env)
-    return func
+    
     # END Problem 21
 
 
