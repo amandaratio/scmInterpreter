@@ -20,6 +20,9 @@ x^3
 (+ * *)
 ; expect Error
 
+(begin (+ 1 2) (* 2 (+ 2 7)) (+ 1 (if (> 1 0) 2)))
+; expect 3
+
 (let ((y (cons 2 (list 4 6))))
      (map (lambda (n) (expt n 2)) y))
 ; expect (4 16 36)
@@ -63,6 +66,10 @@ a
 (define-macro (proc x) x)
 (proc +)
 ; expect #[+]
+
+(define-macro (g first sec) `(or ,first ,sec))
+(g (> 2 (+ 1 0)) 0)
+; expect #t
 
 ; END PROBLEM 0
 
