@@ -10,14 +10,19 @@
 ;;; *** Add your own tests here! ***
 ;;; ********************************
 ; BEGIN PROBLEM 0
-(+ 1 (/ 2 0) 9)
+(+ 1 (and (/ 2 0) 7) 9)
 ; expect Error 
+
+(define x^3 '(^ x 3))
+x^3
+; expect (^ x 3)
 
 (+ * *)
 ; expect Error
 
-(define x 23 2 6)
-; expect Error
+(let ((y (cons 2 (list 4 6))))
+     (map (lambda (n) (expt n 2)) y))
+; expect (4 16 36)
 
 (define (f x) (= (/ 1 1) 0))
 (define a ((f 1)))
@@ -628,7 +633,7 @@ one-through-four
 ;;; Extra credit ;;;
 ;;;;;;;;;;;;;;;;;;;;
 
-(exit)
+
 
 ; Tail call optimization tests
 
@@ -655,7 +660,6 @@ one-through-four
 (sum 1001 0)
 ; expect 501501
 
-(exit)
 
 ; macro tests
 
