@@ -14,8 +14,7 @@
 ; expect Error 
 
 (define x^3 '(^ x 3))
-x^3
-; expect (^ x 3)
+; expect x^3
 
 (+ * *)
 ; expect Error
