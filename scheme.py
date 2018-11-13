@@ -272,11 +272,11 @@ def do_and_form(expressions, env):
     # BEGIN PROBLEM 13
     if len(expressions) == 0:
         return True
-    val = scheme_eval(expressions.first, env, True)
+    elif len(expressions) == 1:
+        return scheme_eval(expressions.first, env,True)
+    val = scheme_eval(expressions.first, env)
     if scheme_falsep(val):
         return False
-    elif len(expressions) == 1:
-        return val
     return do_and_form(expressions.second, env)
     # END PROBLEM 13
 
@@ -285,7 +285,9 @@ def do_or_form(expressions, env):
     # BEGIN PROBLEM 13
     if len(expressions) == 0:
         return False
-    val = scheme_eval(expressions.first, env, True)
+    if len(expressions) == 1:
+        return scheme_eval(expressions.first, env,True)
+    val = scheme_eval(expressions.first, env)
     if scheme_falsep(val):
         return do_or_form(expressions.second, env)
     else:
