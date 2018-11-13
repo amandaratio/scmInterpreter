@@ -60,6 +60,10 @@ a
 (cons (a) (b))
 ; expect (4 . 2)
 
+(define-macro (proc x) x)
+(proc +)
+; expect #[+]
+
 ; END PROBLEM 0
 
 ;;; These are examples from several sections of "The Structure
